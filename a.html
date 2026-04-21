@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanyukt Sharma | Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* Animated Gradient Background */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle,#00f0ff33,#ff00ff22,#000);
+  animation:moveBg 10s linear infinite;
+  z-index:-1;
+}
+
+@keyframes moveBg{
+  0%{transform:translate(0,0)}
+  50%{transform:translate(-25%,-25%)}
+  100%{transform:translate(0,0)}
+}
+
+/* Container */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* Header */
+.header{
+  text-align:center;
+  margin-top:50px;
+}
+
+.header h1{
+  font-size:3rem;
+  font-weight:800;
+  background:linear-gradient(90deg,#00f0ff,#ff00ff);
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px #00f0ff;}
+  to{text-shadow:0 0 25px #ff00ff;}
+}
+
+.header p{
+  opacity:0.7;
+  margin-top:10px;
+}
+
+/* Card */
+.card{
+  margin-top:40px;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(20px);
+  box-shadow:0 0 40px rgba(0,0,0,0.6);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+/* Section Titles */
+.section-title{
+  font-size:1.5rem;
+  margin-bottom:20px;
+  color:#00f0ff;
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+/* Skill Box */
+.box{
+  padding:15px;
+  background:#111;
+  border-radius:15px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.box:hover{
+  background:#1a1a1a;
+  transform:scale(1.05);
+}
+
+/* Button */
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 25px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#00f0ff,#ff00ff);
+  color:#000;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  opacity:0.8;
+}
+
+/* Floating animation */
+.float{
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  margin-top:50px;
+  opacity:0.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header float">
+    <h1>Sanyukt Sharma</h1>
+    <p>20 • Entrepreneur • Tech Enthusiast</p>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="card">
+    <div class="section-title">About Me</div>
+    <p>
+      Passionate entrepreneur focused on online trading, USDT buying & selling, 
+      and Telegram-based digital business. Highly active in online markets and 
+      building networks through Telegram channels.
+      <br><br>
+      Currently pursuing B.Tech in CSE and already completed Diploma in Computer Science.
+    </p>
+
+    <a href="https://t.me/taptoyou" target="_blank" class="btn">Join Telegram</a>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="card">
+    <div class="section-title">Skills & Work</div>
+
+    <div class="grid">
+      <div class="box">Crypto Trading</div>
+      <div class="box">USDT Buying/Selling</div>
+      <div class="box">Telegram Growth</div>
+      <div class="box">Digital Marketing</div>
+      <div class="box">Online Business</div>
+      <div class="box">Networking</div>
+    </div>
+  </div>
+
+  <!-- LIFESTYLE -->
+  <div class="card">
+    <div class="section-title">Lifestyle</div>
+
+    <div class="grid">
+      <div class="box">🏋️ Gym</div>
+      <div class="box">🏸 Badminton</div>
+      <div class="box">💻 Coding</div>
+      <div class="box">📱 Telegram Active</div>
+    </div>
+  </div>
+
+  <!-- EXTRA -->
+  <div class="card">
+    <div class="section-title">Extra</div>
+    <p>
+      • Telegram Star Channel Seller  
+      <br>• Online Deals & Arbitrage Expert  
+      <br>• Building Digital Income Streams  
+      <br>• Future Tech Startup Vision 🚀
+    </p>
+  </div>
+
+  <div class="footer">
+    © 2026 Sanyukt Sharma | All Rights Reserved
+  </div>
+
+</div>
+
+<script>
+// Smooth fade-in animation
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    }
+  });
+});
+
+cards.forEach(card=>{
+  card.style.opacity="0";
+  card.style.transform="translateY(50px)";
+  card.style.transition="0.6s";
+});
+</script>
+
+</body>
+</html>
